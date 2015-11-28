@@ -6,7 +6,10 @@ std::vector<double> Algorytm::mnozenie(double** macierz,std::vector<double> wekt
 	if (rozmiar_macierzy_==(int)wektor.size()){
 		for (int i=0;i<rozmiar_macierzy_;i++){
 		        for (int j=0;j<rozmiar_macierzy_;j++){
-		            wynik.at(i)+= macierz[i][j]*wektor.at(j);
+		        	if (wynik.size()<=i)
+		        		wynik.push_back(macierz[i][j]*wektor.at(j));
+		        	else
+		        		wynik.at(i)+= macierz[i][j]*wektor.at(j);
 		        }
 		    }
 		return wynik;
