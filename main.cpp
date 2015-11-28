@@ -16,6 +16,7 @@
 const int ROZMIAR_MACIERZY=10;
 double** wypelnijMacierz();
 double* wypelnijB();
+void wypiszWektor(std::vector<double> wektor);
 
 
 using namespace std;
@@ -32,7 +33,7 @@ int main() {
 
     AlgorytmCzebyszew algCzebyszew=AlgorytmCzebyszew(macierz,ROZMIAR_MACIERZY,b,(double)x0,alfa,s);
     algCzebyszew.czasStart();
-    algCzebyszew.obliczMacierzRownan();
+    wypiszWektor(algCzebyszew.obliczMacierzRownan());
     algCzebyszew.czasStop();
     //std::cout.precision(6);
     std::cout << "Czas wykonania: "<< fixed <<algCzebyszew.getCzasWykonania()/CLOCKS_PER_SEC<<" sekund"<<std::endl;
@@ -68,4 +69,12 @@ double* wypelnijB(){
 		b_[i] = 2*i;
 	}
 	return b_;
+}
+
+void wypiszWektor(std::vector<double> wektor)
+{
+	std::cout <<std::endl<<"[";
+	for (int i=0;i<wektor.size();i++)
+		std::cout <<wektor.at(i)<<";";
+	std::cout <<"]"<<std::endl;
 }

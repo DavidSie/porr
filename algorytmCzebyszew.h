@@ -19,7 +19,7 @@ class AlgorytmCzebyszew : public  Algorytm{
 	int s_;
 public:
 	AlgorytmCzebyszew(double** macierz,int rozmiar_macierzy,double* b,double x0,double alfa,int s);
-	void obliczMacierzRownan();
+	std::vector<double> obliczMacierzRownan();
 
 
 };
