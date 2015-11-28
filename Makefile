@@ -4,8 +4,8 @@ CXX=/usr/local/bin/gcc-4.8
 CXXFLAGS=-fopenmp -lstdc++  -Wall
 #CXXFLAGS= -lstdc++ -Wall
 
-program01:	main.o algorytm.o algorytmCzebyszew.o algorytmJordaGauss.o
-		$(CXX)    -o  porr_porownanie  algorytm.o algorytmCzebyszew.o algorytmJordaGauss.o main.o  $(CXXFLAGS)
+all:	main.o algorytm.o algorytmCzebyszew.o algorytmJordaGauss.o
+		$(CXX)    -o  porr  algorytm.o algorytmCzebyszew.o algorytmJordaGauss.o main.o  $(CXXFLAGS)
 main.o:	main.cpp
 		$(CXX) -o main.o -c main.cpp $(CXXFLAGS) 
 algorytm.o: algorytm.cpp algorytm.h
