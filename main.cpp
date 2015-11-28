@@ -34,7 +34,7 @@ int main() {
     algCzebyszew.czasStart();
     algCzebyszew.obliczMacierzRownan();
     algCzebyszew.czasStop();
-    std::cout.precision(6);
+    //std::cout.precision(6);
     std::cout << "Czas wykonania: "<< fixed <<algCzebyszew.getCzasWykonania()/CLOCKS_PER_SEC<<" sekund"<<std::endl;
     //std::cout << "Czas wykonania: " << algCzebyszew.getCzasWykonania() << std::endl;
     return 0;

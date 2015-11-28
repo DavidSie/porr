@@ -1,4 +1,4 @@
-CXX=gcc-4.8
+CXX=/usr/local/bin/gcc-4.8
 #CXX=gcc
 
 CXXFLAGS=-fopenmp -lstdc++  -Wall
