@@ -67,3 +67,11 @@ bool Algorytm::warunekCauchego(std::vector<double> wektor_n,std::vector<double> 
 	return true;
 
 }
+
+void Algorytm::wypiszWektor(std::vector<double> wektor)
+{
+	std::cout <<std::endl<<"[";
+	for (int i=0;i<wektor.size();i++)
+		std::cout <<wektor.at(i)<<";";
+	std::cout <<"]"<<std::endl;
+}

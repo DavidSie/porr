@@ -18,9 +18,9 @@ class AlgorytmCzebyszew : public  Algorytm{
 	double x0_;
 	int s_;
 public:
-	AlgorytmCzebyszew(double** macierz,int rozmiar_macierzy,double* b,double x0,double alfa,int s);
+	AlgorytmCzebyszew(double** macierz,int rozmiar_macierzy,std::vector<double> b,double x0,double alfa,int s);
+	~AlgorytmCzebyszew(){delete macierz_;}
 	std::vector<double> obliczMacierzRownan();
-
 
 };
 
