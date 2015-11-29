@@ -23,8 +23,9 @@ std::vector<double> Algorytm::mnozenie(double** macierz,std::vector<double> wekt
 
 std::vector<double> Algorytm::mnozenie(std::vector<double> wektor,double skalar){
 	std::vector<double> wynik;
-	for(int i=0; i<(int)wektor.size(); i++)
+	for(int i=0; i<(int)wektor.size(); i++){
 		wynik.push_back(wektor.at(i)*skalar);
+	}
 	return wynik;
 
 }
@@ -41,12 +42,25 @@ std::vector<double> Algorytm::odejmowanie(std::vector<double> odjemna,std::vecto
 
 std::vector<double> Algorytm::dodawanie(std::vector<double> skladnik1,std::vector<double> skladnik2){
 	std::vector<double> wynik;
-	if(skladnik1.size()==skladnik2.size())
-		for (int i=0;i<(int)skladnik1.size();i++)
-			wynik.push_back(skladnik1.at(i)+skladnik2.at(i));
-	else
-		std::cout << "[ERROR]: dodawanie wektorow, rozmiar wektorow jest rozny"<<std::endl;
-		return wynik;
+	if(skladnik1.size()==skladnik2.size()){
+		wynik.resize(skladnik1.size());
+		#pragma omp parallel shared(wynik,skladnik1,skladnik2)
+			#pragma omp for nowait
+				for (int i=0;i<(int)skladnik1.size();i++){
+					printf("Hello from thread %d, nthreads %d\n", omp_get_thread_num(), omp_get_num_threads());
+					//wynik.push_back(skladnik1.at(i)+skladnik2.at(i));
+					wynik[i]=skladnik1.at(i)+skladnik2.at(i);
+				}
+			#pragma omp barrier
+	}else
+		std::cout << "[ERROR]: dodawanie wektorow, rozmiar wektorow jest rozny. skladnik1.size()="<<skladnik1.size()<<" skladnik2.size()="<<skladnik2.size()<<std::endl;
+	std::cout<<"dodawanie:";
+	wypiszWektor(skladnik1);
+	std::cout<<"+";
+	wypiszWektor(skladnik2);
+	std::cout<<"=";
+	wypiszWektor(wynik);
+	return wynik;
 }
 
 

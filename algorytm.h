@@ -14,6 +14,8 @@
 #include <time.h>
 #include <iostream>
 #include <vector>
+#include <omp.h>
+
 
 class Algorytm {
   protected:

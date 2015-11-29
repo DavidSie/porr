@@ -13,7 +13,7 @@
 #include <sstream>
 #include "algorytmCzebyszew.h"
 
-const int ROZMIAR_MACIERZY=10;
+const int ROZMIAR_MACIERZY=3;
 double** wypelnijMacierz();
 std::vector<double> wypelnijB();
 
@@ -22,8 +22,8 @@ using namespace std;
 
 int main() {
     double** macierz=wypelnijMacierz();
-    #pragma omp parallel
-    printf("Hello from thread %d, nthreads %d\n", omp_get_thread_num(), omp_get_num_threads());
+    //#pragma omp parallel
+    //printf("Hello from thread %d, nthreads %d\n", omp_get_thread_num(), omp_get_num_threads());
     std::vector<double> b=wypelnijB();
     int x0=0;
     double alfa=100;
