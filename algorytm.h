@@ -21,8 +21,8 @@ class Algorytm {
   protected:
    double** macierz_;
    std::vector<double> b_;
-   clock_t czasStart_;
-   clock_t czasRoznica_;
+   double czasStart_;
+   double czasRoznica_;
    int rozmiar_macierzy_;
 
   std::vector<double> mnozenie(double** macierz,std::vector<double> wektor);
@@ -35,8 +35,8 @@ class Algorytm {
    	void setMacierz(double** macierz) {macierz_=macierz;}
    	void setB(std::vector<double> b){b_=b;}
   	virtual std::vector<double> obliczMacierzRownan()=0;
-  	void czasStart(){czasStart_ = clock();}
-  	void czasStop() {czasRoznica_=clock()-czasStart_;}
+  	void czasStart(){czasStart_ = omp_get_wtime();}
+  	void czasStop() {czasRoznica_=omp_get_wtime()-czasStart_;}
   	double getCzasWykonania() {return (double) czasRoznica_;}
   	void wypiszWektor(std::vector<double> wektor);
 

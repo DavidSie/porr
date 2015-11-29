@@ -13,7 +13,7 @@
 #include <sstream>
 #include "algorytmCzebyszew.h"
 
-const int ROZMIAR_MACIERZY=100;
+const int ROZMIAR_MACIERZY=5;
 double** wypelnijMacierz();
 std::vector<double> wypelnijB();
 
@@ -35,7 +35,7 @@ int main() {
     algCzebyszew.wypiszWektor(algCzebyszew.obliczMacierzRownan());
     algCzebyszew.czasStop();
     //std::cout.precision(6);
-    std::cout << "Czas wykonania: "<< fixed <<algCzebyszew.getCzasWykonania()/CLOCKS_PER_SEC<<" sekund"<<std::endl;
+    std::cout << "Czas wykonania: "<< fixed <<algCzebyszew.getCzasWykonania()<<" sekund"<<std::endl;
     //std::cout << "Czas wykonania: " << algCzebyszew.getCzasWykonania() << std::endl;
     return 0;
 }

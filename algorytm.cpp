@@ -4,8 +4,7 @@
 std::vector<double> Algorytm::mnozenie(double** macierz,std::vector<double> wektor){
 	std::vector<double> wynik(rozmiar_macierzy_,0);
 	if (rozmiar_macierzy_==(int)wektor.size()){
-		//wynik.resize(rozmiar_macierzy_);
-		//shared(wynik) private(macierz,wektor)
+		//num_threads(4)
 		#pragma omp parallel for schedule(static)
 		for (int i=0;i<rozmiar_macierzy_;i++){
 			for (int j=0;j<rozmiar_macierzy_;j++){
@@ -22,9 +21,10 @@ std::vector<double> Algorytm::mnozenie(double** macierz,std::vector<double> wekt
 
 
 std::vector<double> Algorytm::mnozenie(std::vector<double> wektor,double skalar){
-	std::vector<double> wynik;
+	std::vector<double> wynik(wektor.size());
+	#pragma omp parallel for schedule(static)
 	for(int i=0; i<(int)wektor.size(); i++){
-		wynik.push_back(wektor.at(i)*skalar);
+		wynik[i]=wektor.at(i)*skalar;
 	}
 	return wynik;
 
