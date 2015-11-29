@@ -13,7 +13,7 @@
 #include <sstream>
 #include "algorytmCzebyszew.h"
 
-const int ROZMIAR_MACIERZY=3;
+const int ROZMIAR_MACIERZY=100;
 double** wypelnijMacierz();
 std::vector<double> wypelnijB();
 
@@ -55,7 +55,7 @@ double** wypelnijMacierz(){
 		 		macierz_[i][j] = ROZMIAR_MACIERZY+3+i;
 		 	else
 				macierz_[i][j] =1;
-			std::cout<<"element macierzy["<<i<<","<<j<<"]="<<macierz_[i][j]<<std::endl;
+			//std::cout<<"element macierzy["<<i<<","<<j<<"]="<<macierz_[i][j]<<std::endl;
 		}
 	}
 
