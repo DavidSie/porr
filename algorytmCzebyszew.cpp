@@ -69,15 +69,9 @@ std::vector<double> AlgorytmCzebyszew::obliczMacierzRownan(){
 		    cz1=x.at(i+1);
 		    cz2=mnozenie( odejmowanie(x.at(i+1),x.at(i)), omega.at(i+1)*omega.at(i)  );
 		    std::vector<double> Ax=mnozenie(macierz_,x.at(i+1));
-		    wypiszWektor(b_);
 		    std::vector<double> Ax_b=odejmowanie(Ax,b_);
-
-		    std::cout<<"Ax-b:";
-		    wypiszWektor(Ax_b);
 		    double skalar=-c*(1+omega.at(i+1)*omega.at(i));
-		    std::cout<<"skalar:"<< skalar<<"jego skladowe to: c:"<<c<<" omega[i]"<<omega.at(i+1)<<" omega[i-1]"<<omega.at(i);
 		    cz3=mnozenie(Ax_b,skalar);
-		    wypiszWektor(cz3);
 		    value=dodawanie(dodawanie(cz1,cz2),cz3);
 		    x.push_back(value);
 		    omega.push_back(1/(L-omega.at(i+1)));
@@ -86,7 +80,6 @@ std::vector<double> AlgorytmCzebyszew::obliczMacierzRownan(){
 		}
 
 		case 3:
-			std::cout <<"iteracja: "<< iteracja<<" krok: 3" <<std::endl;
 		    k++;
 		    i++;
 		    if(k<s_)

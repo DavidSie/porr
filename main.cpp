@@ -13,7 +13,7 @@
 #include <sstream>
 #include "algorytmCzebyszew.h"
 
-const int ROZMIAR_MACIERZY=3;
+const int ROZMIAR_MACIERZY=10;
 double** wypelnijMacierz();
 std::vector<double> wypelnijB();
 
