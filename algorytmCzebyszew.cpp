@@ -102,6 +102,22 @@ std::vector<double> AlgorytmCzebyszew::obliczMacierzRownan(){
 	return x.at(i+1);
 }
 
+bool AlgorytmCzebyszew::warunekCauchego(std::vector<double> wektor_n,std::vector<double> wektor_n_plus_1, double epsilon){
+	double maxRoznica=0;
+	if ( wektor_n.size()==wektor_n_plus_1.size()){
+		for (int i=0; i<wektor_n.size(); i++){
+			double roznica=wektor_n_plus_1.at(i)-wektor_n.at(i);
+			if (roznica<0)
+				roznica*=-1; // modul z roznicy
+			if (roznica>epsilon)
+				return false;
+		}
+	}else{
+		std::cout << "[ERROR]: warunek Cauchego, rozmiar wektorow jest rozny"<<std::endl;
+		return NULL;
+	}
+	return true;
 
+}
 
 

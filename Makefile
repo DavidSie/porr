@@ -13,8 +13,8 @@ algorytm.o: algorytm.cpp algorytm.h
 algorytmCzebyszew.o: algorytmCzebyszew.cpp algorytmCzebyszew.h
 		$(CXX) -o  algorytmCzebyszew.o -c algorytmCzebyszew.cpp $(CXXFLAGS) 
 
-algorytmJordaGauss.o: algorytmJordaGauss.cpp algorytmJordaGauss.h
-		$(CXX) -o  algorytmJordaGauss.o -c algorytmJordaGauss.cpp $(CXXFLAGS)
+algorytmJordaGauss.o: algorytmJordanGauss.cpp algorytmJordanGauss.h
+		$(CXX) -o  algorytmJordaGauss.o -c algorytmJordanGauss.cpp $(CXXFLAGS)
 
 clean:
 		rm -f *.o

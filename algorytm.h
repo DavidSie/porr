@@ -29,7 +29,7 @@ class Algorytm {
   std::vector<double> mnozenie(std::vector<double> wektor,double skalar);
   std::vector<double> odejmowanie(std::vector<double> odjemna,std::vector<double> odjemnik);
   std::vector<double> dodawanie(std::vector<double> skladnik1,std::vector<double> skladnik2);
-  bool warunekCauchego(std::vector<double> wektor_n,std::vector<double> wektor_n_plus_1,double epsilon);
+
 
   public:
    	void setMacierz(double** macierz) {macierz_=macierz;}
